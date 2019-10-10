@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Restaurant Reviews</h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Restaurant</th>
+        <th scope="col">Category</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Review</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @restaurant.name %></td>
+        <td><%= @restaurant.category %></td>
+        <td><%= @restaurant.phone_number %></td>
+        <td>
+          <% @restaurant.reviews.each do |review| %>
+            <%= review.content %>
+            <br>
+          <% end %>
+        </td>
+        <td>
+          <% @restaurant.reviews.each do |review| %>
+            <%= review.rating %>
+            <br>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

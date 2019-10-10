@@ -1,0 +1,31 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Restaurant</th>
+        <th scope="col">Category</th>
+        <th scope="col">Review</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td>
+          <%= restaurant.name %>
+        </td>
+        <td>
+          <%= restaurant.category %>
+        </td>
+        <td>
+          <%= link_to "Review", new_restaurant_review_path(restaurant), class:"btn btn-success rounded-20" %>
+        </td>
+      </tr>
+          <% end %>
+    </tbody>
+  </table>
+
+
+  <%= link_to "New Restaurant", new_restaurant_path, class:"btn btn-success rounded-20" %>
+</div>
+
